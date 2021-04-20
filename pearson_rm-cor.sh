@@ -31,7 +31,7 @@ done
 python ~/github/pearson_correlation/pearsonR.py ${RAND}_out.csv ${INFILE} ${RAND}_test_pearson.csv
 
 # rm sign
-tr -d '-' < ${RAND}_test_pearson.csv > ${RAND}_INDEX.csv
+tr -d '-' < ${RAND}_test_pearson.csv | cut -b1-17 > ${RAND}_INDEX.csv
 
 # paste and tr tab for comma
 paste ${RAND}_INDEX.csv ${INFILE} | tr '\t' ',' > ${RAND}_INDEX_test.csv
